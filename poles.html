@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nos activités — BOCA 83</title>
-<meta name="description" content="Découvrez les activités sportives et de pleine nature proposées par BOCA 83 : football, futsal, pétanque, échecs, triathlon, escalade et plus encore.">
+<title>Nos pôles opérationnels — BOCA 83</title>
+<meta name="description" content="Les quatre pôles opérationnels de BOCA 83 : Formation & Logistique, Orientation, Sécurité & Responsabilité, Solidarité. Une organisation structurée au service du quartier.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@
   }
   .page-hero .wrap{position:relative;z-index:2}
   .page-hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);margin-bottom:18px;color:#fff}
-  .page-hero p{font-size:1.15rem;color:rgba(255,255,255,.78);max-width:600px;margin:0 auto}
+  .page-hero p{font-size:1.15rem;color:rgba(255,255,255,.78);max-width:620px;margin:0 auto}
 
   /* ---------- sections ---------- */
   section{padding:96px 0}
@@ -100,42 +100,47 @@
   .sec-head h2{font-size:clamp(2rem,4.5vw,3rem);margin:14px 0 16px;font-weight:800}
   .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
 
-  /* ---------- sport cards ---------- */
-  .sports{background:var(--paper)}
-  .scards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .scard{
-    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 30px;
-    transition:transform .3s, box-shadow .3s;position:relative;overflow:hidden;
+  /* ---------- pole cards ---------- */
+  .poles-section{background:var(--paper)}
+  .pole-list{display:flex;flex-direction:column;gap:32px}
+  .pole{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:42px 40px;position:relative;overflow:hidden;
+    display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;
+    transition:transform .3s, box-shadow .3s;
   }
-  .scard::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-  .scard:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(11,27,58,.13)}
-  .scard:hover::before{transform:scaleX(1)}
-  .scard .ic{width:54px;height:54px;border-radius:14px;background:var(--navy);display:grid;place-items:center;margin-bottom:22px}
-  .scard h3{font-size:1.32rem;margin-bottom:10px;font-weight:700}
-  .scard p{color:var(--ink-soft);font-size:.98rem}
-  .scard .fed-badge{
-    display:inline-block;font-family:"Archivo";font-weight:700;font-size:.7rem;
-    letter-spacing:.1em;text-transform:uppercase;
-    background:var(--navy);color:var(--gold);
-    padding:4px 10px;border-radius:999px;margin-top:14px;
+  .pole::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .pole:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(11,27,58,.1)}
+  .pole:hover::before{transform:scaleX(1)}
+  .pole-num{
+    font-family:"Anton";font-size:3rem;color:var(--gold);line-height:1;
+    opacity:.25;letter-spacing:.04em;
+    width:72px;text-align:center;flex:none;
   }
-  .scards-row2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px;max-width:calc((100% - 24px) / 3 * 2 + 24px)}
+  .pole-body h3{font-size:1.4rem;font-weight:800;margin-bottom:10px}
+  .pole-body p{color:var(--ink-soft);font-size:1rem;margin-bottom:14px}
+  .pole-body ul{
+    color:var(--ink-soft);font-size:.95rem;padding-left:18px;
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .pole-body .goal{
+    margin-top:16px;font-family:"Archivo";font-weight:700;font-size:.88rem;
+    color:var(--navy);letter-spacing:.02em;
+    padding:10px 16px;background:rgba(201,162,39,.1);border-radius:10px;
+    display:inline-block;
+  }
 
-  /* ---------- pleine nature ---------- */
-  .nature{background:var(--paper-2)}
-  .nature .sec-head{text-align:center;margin-left:auto;margin-right:auto}
-  .nchips{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto}
-  .ncard{
-    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 22px;
-    text-align:center;transition:transform .3s, box-shadow .3s;
+  /* ---------- partenaires ---------- */
+  .partenaires{background:var(--paper-2);text-align:center}
+  .partenaires .sec-head{margin-left:auto;margin-right:auto;text-align:center}
+  .pchips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .pchip{
+    background:var(--card);border:1px solid var(--line);
+    font-family:"Archivo";font-weight:600;font-size:.92rem;
+    padding:14px 24px;border-radius:14px;color:var(--ink);
+    transition:transform .25s, box-shadow .25s, border-color .25s;
   }
-  .ncard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(11,27,58,.12)}
-  .ncard .nic{
-    width:50px;height:50px;border-radius:50%;background:rgba(201,162,39,.12);
-    display:grid;place-items:center;margin:0 auto 14px;
-  }
-  .ncard h3{font-size:1.05rem;font-weight:700}
-  .ncard p{color:var(--ink-soft);font-size:.88rem;margin-top:6px}
+  .pchip:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(11,27,58,.1);border-color:var(--gold)}
 
   /* ---------- cta band ---------- */
   .cta-band{background:var(--gold);color:var(--navy-deep);text-align:center;padding:72px 0}
@@ -160,6 +165,7 @@
   .stagger.in>*:nth-child(2){transition-delay:.08s}
   .stagger.in>*:nth-child(3){transition-delay:.16s}
   .stagger.in>*:nth-child(4){transition-delay:.24s}
+  .stagger.in>*:nth-child(5){transition-delay:.32s}
 
   /* ---------- responsive ---------- */
   @media(max-width:900px){
@@ -172,16 +178,18 @@
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .scards{grid-template-columns:1fr 1fr}
-    .scards-row2{max-width:100%}
-    .nchips{grid-template-columns:1fr 1fr}
+    .pole{grid-template-columns:1fr;gap:10px}
+    .pole-num{width:auto;text-align:left}
     .fgrid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
     section{padding:68px 0}
     .page-hero{padding:140px 0 60px}
     .cta-band{padding:56px 0}
-    .scards,.scards-row2,.nchips,.fgrid{grid-template-columns:1fr}
+    .pole{padding:30px 24px}
+    .pchips{gap:10px}
+    .pchip{padding:12px 18px;font-size:.85rem}
+    .fgrid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -201,8 +209,8 @@
     </a>
     <nav class="menu" id="menu">
       <a href="association.html">L'association</a>
-      <a href="poles.html">Nos pôles</a>
-      <a href="activites.html" class="active">Activités</a>
+      <a href="poles.html" class="active">Nos pôles</a>
+      <a href="activites.html">Activités</a>
       <a href="index.html#boutique">Boutique</a>
       <a href="index.html#contact">Contact</a>
       <button class="btn btn-gold" onclick="location.href='index.html#adherer'">Adhérer</button>
@@ -214,84 +222,100 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Sport · Pleine nature · Dépassement de soi</span>
-    <h1 class="display reveal">Nos activités</h1>
-    <p class="reveal">Du football aux échecs, de l'enfant au vétéran : des disciplines variées pour se dépasser, partager et grandir ensemble.</p>
+    <span class="eyebrow reveal">Organisation · Accompagnement · Terrain</span>
+    <h1 class="display reveal">Nos pôles opérationnels</h1>
+    <p class="reveal">Une organisation structurée, portée par des bénévoles engagés et soutenue par la Mairie de Toulon, le Comité Départemental Sportif du Var et nos partenaires institutionnels.</p>
   </div>
 </section>
 
-<!-- SPORTS COLLECTIFS & FÉDÉRAUX -->
-<section class="sports" id="sports">
+<!-- LES 4 PÔLES -->
+<section class="poles-section" id="poles">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Disciplines encadrées</span>
-      <h2>Sports collectifs &amp; fédéraux</h2>
-      <p>Nos sections affiliées aux fédérations nationales, pour une pratique sportive structurée, compétitive et conviviale.</p>
+      <span class="eyebrow">Quatre axes d'action</span>
+      <h2>Nos pôles en détail</h2>
+      <p>Chaque pôle répond à un besoin identifié du quartier. Ensemble, ils forment un dispositif complet au service des habitants.</p>
     </div>
-    <div class="scards stagger">
-      <div class="scard">
-        <div class="ic"><svg width="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#c9a227" stroke-width="1.8"/><path d="M12 4v16M4 12h16" stroke="#c9a227" stroke-width="1.4"/><path d="M6.3 6.3l11.4 11.4M17.7 6.3L6.3 17.7" stroke="#c9a227" stroke-width=".8"/></svg></div>
-        <h3>Football</h3>
-        <p>Section départementale et équipe vétérans. Entraînements réguliers, compétitions officielles et tournois amicaux tout au long de la saison.</p>
-        <span class="fed-badge">FFF</span>
+    <div class="pole-list stagger">
+
+      <div class="pole">
+        <div class="pole-num">01</div>
+        <div class="pole-body">
+          <h3>Formation &amp; Logistique</h3>
+          <p>Ouvrir des voies de qualification aux jeunes du quartier en proposant un accès concret aux brevets, diplômes et certifications professionnelles.</p>
+          <ul>
+            <li>Brevets fédéraux (football, pétanque, échecs)</li>
+            <li>BAFA / BAFD (animation)</li>
+            <li>CQP — Certificats de Qualification Professionnelle</li>
+            <li>Premiers secours : PSC1, SST</li>
+          </ul>
+          <div class="goal">Objectif : qualifier pour insérer</div>
+        </div>
       </div>
-      <div class="scard">
-        <div class="ic"><svg width="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="#c9a227" stroke-width="1.8"/><circle cx="12" cy="12" r="3" stroke="#c9a227" stroke-width="1.4"/><path d="M4 6l8 6 8-6" stroke="#c9a227" stroke-width="1"/></svg></div>
-        <h3>Futsal</h3>
-        <p>Football en salle, rythme rapide, technique et collectif. Entraînements hebdomadaires et participation aux championnats régionaux.</p>
+
+      <div class="pole">
+        <div class="pole-num">02</div>
+        <div class="pole-body">
+          <h3>Orientation</h3>
+          <p>Détecter, orienter et accompagner chaque jeune, de son arrivée dans l'association jusqu'à l'obtention de son diplôme ou de son premier emploi.</p>
+          <ul>
+            <li>Détection des besoins et des talents</li>
+            <li>Accompagnement scolaire et professionnel</li>
+            <li>Mise en relation avec les partenaires d'insertion</li>
+            <li>Suivi personnalisé et dans la durée</li>
+          </ul>
+          <div class="goal">Objectif : personne ne reste au bord du chemin</div>
+        </div>
       </div>
-      <div class="scard">
-        <div class="ic"><svg width="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="14" r="5" stroke="#c9a227" stroke-width="1.8"/><circle cx="12" cy="14" r="1.5" fill="#c9a227"/><path d="M12 4v5" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <h3>Pétanque</h3>
-        <p>Pratique conviviale et compétitive, ouverte à tous les âges. Concours officiels, tournois internes et moments de partage.</p>
-        <span class="fed-badge">FFPJP</span>
+
+      <div class="pole">
+        <div class="pole-num">03</div>
+        <div class="pole-body">
+          <h3>Sécurité &amp; Responsabilité</h3>
+          <p>Garantir un cadre sain et sûr pour la pratique sportive et les activités collectives, dans le respect des règles et des personnes.</p>
+          <ul>
+            <li>Encadrement qualifié de chaque activité</li>
+            <li>Prévention des comportements à risque</li>
+            <li>Respect des règlements fédéraux et associatifs</li>
+            <li>Responsabilisation des jeunes et des familles</li>
+          </ul>
+          <div class="goal">Objectif : un environnement de confiance</div>
+        </div>
       </div>
-    </div>
-    <div class="scards-row2 stagger">
-      <div class="scard">
-        <div class="ic"><svg width="26" viewBox="0 0 24 24" fill="none"><path d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z" stroke="#c9a227" stroke-width="1.6"/><circle cx="7.5" cy="7.5" r="1" fill="#c9a227"/><path d="M16.5 7.5l-2 2M16.5 7.5l2-2" stroke="#c9a227" stroke-width="1.2"/></svg></div>
-        <h3>Échecs</h3>
-        <p>Club d'échecs ouvert aux débutants comme aux joueurs confirmés. Cours, tournois internes et compétitions fédérales.</p>
-        <span class="fed-badge">FFE</span>
+
+      <div class="pole">
+        <div class="pole-num">04</div>
+        <div class="pole-body">
+          <h3>Solidarité</h3>
+          <p>Maintenir le lien social, réduire l'isolement et accompagner les personnes les plus vulnérables du quartier, quel que soit leur âge.</p>
+          <ul>
+            <li>Aide alimentaire et vestimentaire</li>
+            <li>Accompagnement des familles en difficulté</li>
+            <li>Lien intergénérationnel et visites aux aînés</li>
+            <li>Médiation et soutien administratif</li>
+          </ul>
+          <div class="goal">Objectif : personne n'est laissé seul</div>
+        </div>
       </div>
-      <div class="scard">
-        <div class="ic"><svg width="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M3 12h3M18 12h3M12 18v3" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="5" stroke="#c9a227" stroke-width="1.8"/></svg></div>
-        <h3>Multisports</h3>
-        <p>Découverte et initiation à plusieurs disciplines, pour les plus jeunes comme pour les adultes. Variété, plaisir et cohésion de groupe.</p>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PLEINE NATURE -->
-<section class="nature" id="nature">
+<!-- NOS PARTENAIRES -->
+<section class="partenaires" id="partenaires">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Sorties &amp; découvertes</span>
-      <h2>Pleine nature &amp; multisports</h2>
-      <p>Des activités de plein air encadrées pour découvrir de nouvelles sensations et se reconnecter à l'environnement.</p>
+      <span class="eyebrow">Réseau institutionnel</span>
+      <h2>Nos partenaires</h2>
+      <p>BOCA 83 s'appuie sur un réseau de partenaires institutionnels pour amplifier l'impact de ses actions sur le terrain.</p>
     </div>
-    <div class="nchips stagger">
-      <div class="ncard">
-        <div class="nic"><svg width="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l5-7 3 4 4-6 4 9" stroke="#c9a227" stroke-width="1.8" stroke-linejoin="round"/><circle cx="17" cy="7" r="2" stroke="#c9a227" stroke-width="1.5"/></svg></div>
-        <h3>Triathlon</h3>
-        <p>Natation, cyclisme, course à pied</p>
-      </div>
-      <div class="ncard">
-        <div class="nic"><svg width="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 7l4-4 4 4M6 21h12" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="13" r="1" fill="#c9a227"/><circle cx="14" cy="9" r="1" fill="#c9a227"/></svg></div>
-        <h3>Escalade</h3>
-        <p>Bloc et voie, en salle et en falaise</p>
-      </div>
-      <div class="ncard">
-        <div class="nic"><svg width="24" viewBox="0 0 24 24" fill="none"><path d="M3 20c3-4 5-14 9-14s6 10 9 14" stroke="#c9a227" stroke-width="1.8"/><path d="M7 14c2 0 3-2 5-2s3 2 5 2" stroke="#c9a227" stroke-width="1.2"/></svg></div>
-        <h3>Canyoning</h3>
-        <p>Descente de canyons et parcours aquatiques</p>
-      </div>
-      <div class="ncard">
-        <div class="nic"><svg width="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.4l-6.4 4.8L8 14l-6-4.8h7.6Z" stroke="#c9a227" stroke-width="1.5" fill="none"/></svg></div>
-        <h3>Multi-activités</h3>
-        <p>Randonnée, jeux collectifs et plus</p>
-      </div>
+    <div class="pchips stagger">
+      <div class="pchip">Mairie de Toulon</div>
+      <div class="pchip">Mission Locale</div>
+      <div class="pchip">France Travail</div>
+      <div class="pchip">Comité Départemental Sportif du Var</div>
+      <div class="pchip">Toulon Habitat Méditerranée</div>
     </div>
   </div>
 </section>
@@ -299,9 +323,9 @@
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="wrap reveal">
-    <h2>Envie de participer ?</h2>
-    <p>Inscrivez-vous en ligne et rejoignez l'une de nos activités sportives ou de pleine nature dès la prochaine saison.</p>
-    <button class="btn btn-navy" style="font-size:1rem;padding:15px 32px" onclick="location.href='index.html#adherer'">S'inscrire en ligne →</button>
+    <h2>Envie de vous engager ?</h2>
+    <p>Devenez adhérent, bénévole ou partenaire. Chaque contribution compte pour le quartier.</p>
+    <button class="btn btn-navy" style="font-size:1rem;padding:15px 32px" onclick="location.href='index.html#adherer'">Adhérer en ligne →</button>
   </div>
 </section>
 
