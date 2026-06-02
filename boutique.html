@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique du club — BOCA 83</title>
+<meta name="description" content="Boutique BOCA 83 : maillots, survêtements, équipements et accessoires aux couleurs du club. Retrait sur place au siège de l'association.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1b3a;
+    --navy-2:#11254d;
+    --navy-deep:#071226;
+    --gold:#c9a227;
+    --gold-soft:#d9bc5a;
+    --paper:#f6f2e9;
+    --paper-2:#efe9da;
+    --card:#ffffff;
+    --ink:#11182b;
+    --ink-soft:#4a5468;
+    --line:#e2dccc;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hanken Grotesk",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.05;letter-spacing:-.02em}
+  .display{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.01em;line-height:.92}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:"Archivo";font-weight:700;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+  /* ---------- crest ---------- */
+  .crest{width:46px;height:46px;flex:none}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(11,27,58,.94);backdrop-filter:blur(10px);box-shadow:0 6px 30px rgba(0,0,0,.25);padding:12px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:13px;color:#fff}
+  .brand .name{font-family:"Archivo";font-weight:900;font-size:1.18rem;letter-spacing:.02em;line-height:1}
+  .brand .name small{display:block;font-weight:600;font-size:.56rem;letter-spacing:.28em;color:var(--gold-soft);margin-top:3px}
+  .menu{display:flex;align-items:center;gap:30px}
+  .menu a{color:rgba(255,255,255,.85);font-weight:500;font-size:.95rem;position:relative;transition:color .2s}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
+  .menu a:hover{color:#fff}.menu a:hover::after{width:100%}
+  .menu a.active{color:#fff}
+  .menu a.active::after{width:100%}
+  .btn{
+    font-family:"Archivo";font-weight:700;font-size:.9rem;letter-spacing:.02em;
+    padding:12px 22px;border-radius:999px;cursor:pointer;border:none;display:inline-flex;
+    align-items:center;gap:8px;transition:transform .2s, box-shadow .2s, background .2s;white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy-deep);box-shadow:0 6px 20px rgba(201,162,39,.35)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,162,39,.5)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+  /* ---------- page hero ---------- */
+  .page-hero{
+    position:relative;background:var(--navy);color:#fff;
+    padding:170px 0 80px;overflow:hidden;text-align:center;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(900px 400px at 50% -10%, rgba(201,162,39,.18), transparent 60%),
+      linear-gradient(180deg,var(--navy) 0%, var(--navy-deep) 100%);
+  }
+  .page-hero::after{
+    content:"";position:absolute;inset:0;opacity:.06;
+    background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 42px);
+    mask-image:radial-gradient(circle at 50% 40%, #000, transparent 75%);
+  }
+  .page-hero .wrap{position:relative;z-index:2}
+  .page-hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);margin-bottom:18px;color:#fff}
+  .page-hero p{font-size:1.15rem;color:rgba(255,255,255,.78);max-width:620px;margin:0 auto}
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0}
+
+  /* ---------- notice banner ---------- */
+  .notice-banner{
+    background:rgba(201,162,39,.1);border:2px solid var(--gold);border-radius:14px;
+    padding:20px 28px;text-align:center;margin-bottom:54px;
+  }
+  .notice-banner p{
+    font-family:"Archivo";font-weight:600;font-size:.95rem;color:var(--navy);
+    letter-spacing:.02em;margin:0;
+  }
+  .notice-banner small{
+    display:block;margin-top:6px;font-family:"Hanken Grotesk",sans-serif;
+    font-weight:400;font-size:.86rem;color:var(--ink-soft);
+  }
+
+  /* ---------- product grid ---------- */
+  .products{background:var(--paper)}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .pcard{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    overflow:hidden;transition:transform .3s, box-shadow .3s;
+    display:flex;flex-direction:column;
+  }
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(11,27,58,.13)}
+  .pcard-img{
+    width:100%;aspect-ratio:4/5;overflow:hidden;background:var(--paper-2);
+    flex:none;
+  }
+  .pcard-img img{
+    width:100%;height:100%;object-fit:cover;object-position:center top;
+    transition:transform .4s;
+  }
+  .pcard:hover .pcard-img img{transform:scale(1.04)}
+  .pcard-body{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .pcard-body h3{font-size:1.12rem;font-weight:700;margin-bottom:8px}
+  .pcard-price{
+    font-family:"Archivo";font-weight:600;font-size:.88rem;color:var(--ink-soft);
+    margin-bottom:16px;letter-spacing:.02em;
+  }
+  .pcard-body .btn-disabled{
+    margin-top:auto;
+    font-family:"Archivo";font-weight:700;font-size:.82rem;letter-spacing:.02em;
+    padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);
+    background:var(--paper);color:var(--ink-soft);
+    cursor:default;text-align:center;display:block;
+    width:100%;
+  }
+
+  /* ---------- info section ---------- */
+  .shop-info{background:var(--paper-2)}
+  .info-inner{
+    max-width:760px;margin:0 auto;text-align:center;
+  }
+  .info-inner h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin:14px 0 18px}
+  .info-inner p{font-size:1.04rem;color:var(--ink-soft);margin-bottom:14px}
+  .info-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+  .info-chip{
+    background:var(--card);border:1px solid var(--line);
+    font-family:"Archivo";font-weight:600;font-size:.84rem;
+    padding:10px 20px;border-radius:999px;color:var(--ink);
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.78);padding:70px 0 32px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:46px}
+  footer h4{font-family:"Archivo";font-weight:700;color:#fff;font-size:.95rem;letter-spacing:.04em;margin-bottom:16px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  footer a:hover{color:var(--gold-soft)}
+  footer .brand .name{font-size:1.3rem}
+  footer .fdesc{font-size:.92rem;max-width:300px;margin-top:16px}
+  .fbottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(255,255,255,.5)}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+  .stagger.in>*{opacity:1;transform:none}
+  .stagger.in>*:nth-child(2){transition-delay:.06s}
+  .stagger.in>*:nth-child(3){transition-delay:.12s}
+  .stagger.in>*:nth-child(4){transition-delay:.18s}
+  .stagger.in>*:nth-child(5){transition-delay:.24s}
+  .stagger.in>*:nth-child(6){transition-delay:.30s}
+  .stagger.in>*:nth-child(7){transition-delay:.36s}
+  .stagger.in>*:nth-child(8){transition-delay:.42s}
+  .stagger.in>*:nth-child(9){transition-delay:.48s}
+  .stagger.in>*:nth-child(10){transition-delay:.54s}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .menu{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:var(--navy-deep);
+      flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;
+      transform:translateX(100%);transition:transform .35s;z-index:60}
+    .menu.open{transform:none}
+    .menu a{font-size:1.2rem}
+    .burger{display:flex;z-index:61}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .pgrid{grid-template-columns:1fr 1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    section{padding:68px 0}
+    .page-hero{padding:140px 0 60px}
+    .pgrid,.fgrid{grid-template-columns:1fr}
+    .notice-banner{padding:16px 20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="BOCA 83 accueil">
+      <svg class="crest" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#0b1b3a" stroke="#c9a227" stroke-width="2.5"/>
+        <circle cx="32" cy="32" r="23" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+        <path d="M32 16 L40 24 L36 26 L44 34 L34 33 L32 44 L30 33 L20 34 L28 26 L24 24 Z" fill="#c9a227"/>
+        <text x="32" y="56" font-family="Anton,sans-serif" font-size="9" fill="#c9a227" text-anchor="middle" letter-spacing="1">83</text>
+      </svg>
+      <div class="name">BOCA 83<small>ORGANISATION · CULTURE · ANIMATION</small></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="association.html">L'association</a>
+      <a href="poles.html">Nos pôles</a>
+      <a href="activites.html">Activités</a>
+      <a href="boutique.html" class="active">Boutique</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn btn-gold" onclick="location.href='index.html#adherer'">Adhérer</button>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Équipements · Collection · Club</span>
+    <h1 class="display reveal">Boutique du club</h1>
+    <p class="reveal">Maillots, survêtements, équipements et accessoires aux couleurs de BOCA 83. Commande et retrait sur place au siège de l'association.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="wrap">
+
+    <div class="notice-banner reveal">
+      <p>Démonstration interne — Visuels provisoires en attente de validation.</p>
+      <small>Boutique en cours de préparation, commande en ligne à venir.</small>
+    </div>
+
+    <div class="pgrid stagger">
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/kit-collection-blanc.png" alt="Kit Collection — maillot, short et chaussettes blanc" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Kit Collection</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/maillot-1.png" alt="Maillot domicile BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Maillot domicile</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/maillot-2.png" alt="Maillot domicile variante BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Maillot domicile (variante)</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/maillot-exterieur.png" alt="Maillot extérieur BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Maillot extérieur</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/survetement.jpg" alt="Survêtement BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Survêtement BOCA 83</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/survetement-1.png" alt="Survêtement édition 1 BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Survêtement édition 1</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/survetement-coach.png" alt="Survêtement coach BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Survêtement coach</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/survetement-vente.png" alt="Survêtement BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Survêtement</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/parka.png" alt="Parka BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Parka BOCA 83</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img"><img src="images/sac-a-dos.png" alt="Sac à dos BOCA 83" loading="lazy"></div>
+        <div class="pcard-body">
+          <h3>Sac à dos BOCA 83</h3>
+          <div class="pcard-price">Prix à définir</div>
+          <span class="btn-disabled">Bientôt disponible</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="shop-info">
+  <div class="wrap">
+    <div class="info-inner reveal">
+      <span class="eyebrow">Informations pratiques</span>
+      <h2>Comment ça marche ?</h2>
+      <p>L'association achète les produits et les revend directement à ses membres et sympathisants. L'intégralité des recettes est encaissée par BOCA 83 et réinvestie dans les activités du club.</p>
+      <p>Le retrait se fait sur place au siège de l'association — pas de livraison pour le moment. La commande en ligne sera disponible prochainement via HelloAsso.</p>
+      <div class="info-chips">
+        <span class="info-chip">Achat direct auprès du club</span>
+        <span class="info-chip">Retrait sur place</span>
+        <span class="info-chip">Commande en ligne à venir</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:6px">
+          <svg class="crest" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#11254d" stroke="#c9a227" stroke-width="2.5"/>
+            <path d="M32 16 L40 24 L36 26 L44 34 L34 33 L32 44 L30 33 L20 34 L28 26 L24 24 Z" fill="#c9a227"/>
+          </svg>
+          <div class="name">BOCA 83</div>
+        </a>
+        <p class="fdesc">Association loi 1901 du quartier de la Beaucaire. Sport, culture, solidarité et formation des jeunes depuis 2013.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="association.html">L'association</a></li>
+          <li><a href="poles.html">Nos pôles</a></li>
+          <li><a href="activites.html">Activités</a></li>
+          <li><a href="index.html#boutique">Boutique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>S'impliquer</h4>
+        <ul>
+          <li><a href="index.html#adherer">Adhérer</a></li>
+          <li><a href="index.html#adherer">S'inscrire à une activité</a></li>
+          <li><a href="contact.html">Devenir bénévole</a></li>
+          <li><a href="contact.html">Nos partenaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Zone commerciale Est<br>Avenue Albert Camus, 83200 Toulon</li>
+          <li><a href="tel:0612576493">06 12 57 64 93</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 BOCA 83 — Association déclarée loi 1901</span>
+      <span>SIREN 792 319 824 · RNA W832010616</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky header
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+  // burger
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');menu.classList.toggle('open')});
+  menu.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{burger.classList.remove('open');menu.classList.remove('open')}));
+  // scroll reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
