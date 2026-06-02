@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nos pôles opérationnels — BOCA 83</title>
-<meta name="description" content="Les quatre pôles opérationnels de BOCA 83 : Formation & Logistique, Orientation, Sécurité & Responsabilité, Solidarité. Une organisation structurée au service du quartier.">
+<title>Contact — BOCA 83</title>
+<meta name="description" content="Contactez BOCA 83, association loi 1901 du quartier de la Beaucaire à Toulon. Adresse, téléphone, formulaire de contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -69,8 +69,6 @@
   .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,162,39,.5)}
   .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
-  .btn-navy{background:var(--navy);color:#fff}
-  .btn-navy:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(11,27,58,.4)}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
   .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
 
@@ -92,60 +90,70 @@
   }
   .page-hero .wrap{position:relative;z-index:2}
   .page-hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);margin-bottom:18px;color:#fff}
-  .page-hero p{font-size:1.15rem;color:rgba(255,255,255,.78);max-width:620px;margin:0 auto}
+  .page-hero p{font-size:1.15rem;color:rgba(255,255,255,.78);max-width:600px;margin:0 auto}
 
   /* ---------- sections ---------- */
   section{padding:96px 0}
-  .sec-head{max-width:720px;margin-bottom:54px}
-  .sec-head h2{font-size:clamp(2rem,4.5vw,3rem);margin:14px 0 16px;font-weight:800}
-  .sec-head p{font-size:1.08rem;color:var(--ink-soft)}
 
-  /* ---------- pole cards ---------- */
-  .poles-section{background:var(--paper)}
-  .pole-list{display:flex;flex-direction:column;gap:32px}
-  .pole{
+  /* ---------- contact section ---------- */
+  .contact-section{background:var(--paper)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+
+  /* left: info */
+  .contact-info h2{font-size:1.6rem;font-weight:800;margin-bottom:28px}
+  .info-list{display:flex;flex-direction:column;gap:22px}
+  .info-item{display:flex;align-items:flex-start;gap:16px}
+  .info-item .info-ic{
+    width:44px;height:44px;border-radius:12px;background:var(--navy);
+    display:grid;place-items:center;flex:none;
+  }
+  .info-item .info-text b{display:block;font-family:"Archivo";font-weight:700;font-size:.95rem;margin-bottom:2px}
+  .info-item .info-text span{color:var(--ink-soft);font-size:.95rem}
+  .info-item .info-text a{color:var(--ink);transition:color .2s}
+  .info-item .info-text a:hover{color:var(--gold)}
+  .legal-note{
+    margin-top:32px;padding:18px 22px;background:var(--paper-2);border-radius:14px;
+    font-size:.88rem;color:var(--ink-soft);border:1px solid var(--line);
+  }
+  .legal-note b{color:var(--ink);font-family:"Archivo";font-weight:700}
+
+  /* right: form */
+  .contact-form-card{
     background:var(--card);border:1px solid var(--line);border-radius:18px;
-    padding:42px 40px;position:relative;overflow:hidden;
-    display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;
-    transition:transform .3s, box-shadow .3s;
+    padding:38px 34px;
   }
-  .pole::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-  .pole:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(11,27,58,.1)}
-  .pole:hover::before{transform:scaleX(1)}
-  .pole-num{
-    font-family:"Anton";font-size:3rem;color:var(--gold);line-height:1;
-    opacity:.25;letter-spacing:.04em;
-    width:72px;text-align:center;flex:none;
+  .contact-form-card h2{font-size:1.4rem;font-weight:800;margin-bottom:24px}
+  .form-group{margin-bottom:18px}
+  .form-group label{
+    display:block;font-family:"Archivo";font-weight:600;font-size:.85rem;
+    letter-spacing:.03em;margin-bottom:6px;color:var(--ink);
   }
-  .pole-body h3{font-size:1.4rem;font-weight:800;margin-bottom:10px}
-  .pole-body p{color:var(--ink-soft);font-size:1rem;margin-bottom:14px}
-  .pole-body ul{
-    color:var(--ink-soft);font-size:.95rem;padding-left:18px;
-    display:flex;flex-direction:column;gap:5px;
+  .form-group input,
+  .form-group textarea{
+    width:100%;font-family:"Hanken Grotesk",sans-serif;font-size:.96rem;
+    padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;
+    background:var(--paper);color:var(--ink);outline:none;
+    transition:border-color .25s, box-shadow .25s;
   }
-  .pole-body .goal{
-    margin-top:16px;font-family:"Archivo";font-weight:700;font-size:.88rem;
-    color:var(--navy);letter-spacing:.02em;
-    padding:10px 16px;background:rgba(201,162,39,.1);border-radius:10px;
-    display:inline-block;
+  .form-group input:focus,
+  .form-group textarea:focus{
+    border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.15);
   }
+  .form-group textarea{resize:vertical;min-height:130px}
+  .form-submit{margin-top:24px}
+  .form-submit .btn{width:100%;justify-content:center;font-size:1rem;padding:14px 24px}
+  .form-note{margin-top:14px;font-size:.82rem;color:var(--ink-soft);text-align:center;font-style:italic}
 
-  /* ---------- partenaires ---------- */
-  .partenaires{background:var(--paper-2);text-align:center}
-  .partenaires .sec-head{margin-left:auto;margin-right:auto;text-align:center}
-  .pchips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-  .pchip{
-    background:var(--card);border:1px solid var(--line);
-    font-family:"Archivo";font-weight:600;font-size:.92rem;
-    padding:14px 24px;border-radius:14px;color:var(--ink);
-    transition:transform .25s, box-shadow .25s, border-color .25s;
+  /* ---------- map ---------- */
+  .map-section{background:var(--paper-2);padding:0 0 96px}
+  .map-wrap{
+    max-width:var(--maxw);margin:0 auto;padding:0 24px;
   }
-  .pchip:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(11,27,58,.1);border-color:var(--gold)}
-
-  /* ---------- cta band ---------- */
-  .cta-band{background:var(--gold);color:var(--navy-deep);text-align:center;padding:72px 0}
-  .cta-band h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:14px}
-  .cta-band p{font-size:1.08rem;max-width:520px;margin:0 auto 28px;color:#3b2f0a}
+  .map-frame{
+    width:100%;height:400px;border:1px solid var(--line);border-radius:18px;
+    overflow:hidden;
+  }
+  .map-frame iframe{width:100%;height:100%;border:0}
 
   /* ---------- footer ---------- */
   footer{background:var(--navy-deep);color:rgba(255,255,255,.78);padding:70px 0 32px}
@@ -165,7 +173,6 @@
   .stagger.in>*:nth-child(2){transition-delay:.08s}
   .stagger.in>*:nth-child(3){transition-delay:.16s}
   .stagger.in>*:nth-child(4){transition-delay:.24s}
-  .stagger.in>*:nth-child(5){transition-delay:.32s}
 
   /* ---------- responsive ---------- */
   @media(max-width:900px){
@@ -178,17 +185,15 @@
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .pole{grid-template-columns:1fr;gap:10px}
-    .pole-num{width:auto;text-align:left}
+    .contact-grid{grid-template-columns:1fr}
     .fgrid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:560px){
     section{padding:68px 0}
     .page-hero{padding:140px 0 60px}
-    .cta-band{padding:56px 0}
-    .pole{padding:30px 24px}
-    .pchips{gap:10px}
-    .pchip{padding:12px 18px;font-size:.85rem}
+    .map-section{padding-bottom:68px}
+    .map-frame{height:280px;border-radius:14px}
+    .contact-form-card{padding:28px 22px}
     .fgrid{grid-template-columns:1fr}
   }
 </style>
@@ -209,10 +214,10 @@
     </a>
     <nav class="menu" id="menu">
       <a href="association.html">L'association</a>
-      <a href="poles.html" class="active">Nos pôles</a>
+      <a href="poles.html">Nos pôles</a>
       <a href="activites.html">Activités</a>
       <a href="index.html#boutique">Boutique</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
       <button class="btn btn-gold" onclick="location.href='index.html#adherer'">Adhérer</button>
     </nav>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -222,115 +227,99 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Organisation · Accompagnement · Terrain</span>
-    <h1 class="display reveal">Nos pôles opérationnels</h1>
-    <p class="reveal">Une organisation structurée, portée par des bénévoles engagés et soutenue par la Mairie de Toulon, le Comité Départemental Sportif du Var et nos partenaires institutionnels.</p>
+    <span class="eyebrow reveal">Échangeons · Rencontrons-nous</span>
+    <h1 class="display reveal">Contact</h1>
+    <p class="reveal">Une question, une envie de rejoindre l'association ou de proposer un partenariat ? N'hésitez pas à nous écrire ou à passer nous voir.</p>
   </div>
 </section>
 
-<!-- LES 4 PÔLES -->
-<section class="poles-section" id="poles">
+<!-- CONTACT -->
+<section class="contact-section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Quatre axes d'action</span>
-      <h2>Nos pôles en détail</h2>
-      <p>Chaque pôle répond à un besoin identifié du quartier. Ensemble, ils forment un dispositif complet au service des habitants.</p>
-    </div>
-    <div class="pole-list stagger">
+    <div class="contact-grid">
 
-      <div class="pole">
-        <div class="pole-num">01</div>
-        <div class="pole-body">
-          <h3>Formation &amp; Logistique</h3>
-          <p>Ouvrir des voies de qualification aux jeunes du quartier en proposant un accès concret aux brevets, diplômes et certifications professionnelles.</p>
-          <ul>
-            <li>Brevets fédéraux (football, pétanque, échecs)</li>
-            <li>BAFA / BAFD (animation)</li>
-            <li>CQP — Certificats de Qualification Professionnelle</li>
-            <li>Premiers secours : PSC1, SST</li>
-          </ul>
-          <div class="goal">Objectif : qualifier pour insérer</div>
+      <!-- LEFT: coordonnées -->
+      <div class="reveal">
+        <h2>Nos coordonnées</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-ic">
+              <svg width="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" stroke="#c9a227" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="#c9a227" stroke-width="1.5"/></svg>
+            </div>
+            <div class="info-text">
+              <b>Adresse</b>
+              <span>Zone commerciale Est<br>Avenue Albert Camus, 83200 Toulon</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-ic">
+              <svg width="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.35a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.75.32 1.54.55 2.35.68a2 2 0 0 1 1.72 2.05Z" stroke="#c9a227" stroke-width="1.8"/></svg>
+            </div>
+            <div class="info-text">
+              <b>Téléphone</b>
+              <span><a href="tel:0612576493">06 12 57 64 93</a></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-ic">
+              <svg width="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#c9a227" stroke-width="1.8"/><path d="M22 7l-10 7L2 7" stroke="#c9a227" stroke-width="1.8"/></svg>
+            </div>
+            <div class="info-text">
+              <b>Email</b>
+              <span><a href="mailto:contact@boca83.fr">contact@boca83.fr</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="legal-note">
+          <b>Association loi 1901</b><br>
+          SIREN 792 319 824 · RNA W832010616
         </div>
       </div>
 
-      <div class="pole">
-        <div class="pole-num">02</div>
-        <div class="pole-body">
-          <h3>Orientation</h3>
-          <p>Détecter, orienter et accompagner chaque jeune, de son arrivée dans l'association jusqu'à l'obtention de son diplôme ou de son premier emploi.</p>
-          <ul>
-            <li>Détection des besoins et des talents</li>
-            <li>Accompagnement scolaire et professionnel</li>
-            <li>Mise en relation avec les partenaires d'insertion</li>
-            <li>Suivi personnalisé et dans la durée</li>
-          </ul>
-          <div class="goal">Objectif : personne ne reste au bord du chemin</div>
+      <!-- RIGHT: formulaire -->
+      <div class="reveal">
+        <div class="contact-form-card">
+          <h2>Envoyez-nous un message</h2>
+          <form onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Merci ! (démonstration — le message n\'a pas été envoyé)'">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <input type="text" id="sujet" name="sujet" placeholder="Objet de votre message">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message…" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-gold">Envoyer →</button>
+            </div>
+            <p class="form-note">Formulaire de démonstration — à connecter avant la mise en ligne.</p>
+          </form>
         </div>
       </div>
 
-      <div class="pole">
-        <div class="pole-num">03</div>
-        <div class="pole-body">
-          <h3>Sécurité &amp; Responsabilité</h3>
-          <p>Garantir un cadre sain et sûr pour la pratique sportive et les activités collectives, dans le respect des règles et des personnes.</p>
-          <ul>
-            <li>Encadrement qualifié de chaque activité</li>
-            <li>Prévention des comportements à risque</li>
-            <li>Respect des règlements fédéraux et associatifs</li>
-            <li>Responsabilisation des jeunes et des familles</li>
-          </ul>
-          <div class="goal">Objectif : un environnement de confiance</div>
-        </div>
-      </div>
-
-      <div class="pole">
-        <div class="pole-num">04</div>
-        <div class="pole-body">
-          <h3>Solidarité</h3>
-          <p>Maintenir le lien social, réduire l'isolement et accompagner les personnes les plus vulnérables du quartier, quel que soit leur âge.</p>
-          <ul>
-            <li>Aide alimentaire et vestimentaire</li>
-            <li>Accompagnement des familles en difficulté</li>
-            <li>Lien intergénérationnel et visites aux aînés</li>
-            <li>Médiation et soutien administratif</li>
-          </ul>
-          <div class="goal">Objectif : personne n'est laissé seul</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- NOS PARTENAIRES -->
-<section class="partenaires" id="partenaires">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Réseau institutionnel</span>
-      <h2>Nos partenaires</h2>
-      <p>BOCA 83 s'appuie sur un réseau de partenaires institutionnels pour amplifier l'impact de ses actions sur le terrain.</p>
-    </div>
-    <div class="pchips stagger">
-      <div class="pchip">Mairie de Toulon</div>
-      <div class="pchip">Mission Locale</div>
-      <div class="pchip">France Travail</div>
-      <div class="pchip">Comité Départemental Sportif du Var</div>
-      <div class="pchip">Toulon Habitat Méditerranée</div>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="wrap reveal">
-    <h2>Envie de vous engager ?</h2>
-    <p>Devenez adhérent, bénévole ou partenaire. Chaque contribution compte pour le quartier.</p>
-    <button class="btn btn-navy" style="font-size:1rem;padding:15px 32px" onclick="location.href='index.html#adherer'">Adhérer en ligne →</button>
+<!-- MAP -->
+<section class="map-section">
+  <div class="map-wrap">
+    <div class="map-frame reveal">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=5.9450%2C43.1100%2C5.9650%2C43.1250&amp;layer=mapnik&amp;marker=43.1175%2C5.9550" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation BOCA 83 — Toulon"></iframe>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="wrap">
     <div class="fgrid">
       <div>
